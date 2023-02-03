@@ -87,3 +87,24 @@ form input{
 #overlay.active{
     pointer-events: all;
 }
+
+.remove-book-btn{
+    color: white;
+    font-size: 20px;
+    padding: 5px 5px;
+    background: rgb(211, 29, 29);
+}
+
+.read-status-btn{
+    color: white;
+    font-size: 20px;
+    padding: 5px 5px;
+    background: gold;
+}
+
+.read{
+    color: white;
+    font-size: 20px;
+    padding: 5px 5px;
+    background: rgb(57, 224, 57);
+}
