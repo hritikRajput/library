@@ -3,3 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+body{
+    border: 2px solid red;
+    min-height: 100vh;
+}
+
+.cards{
+    border: 1px solid lightgreen;
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: 400px;
+    grid-auto-rows: 400px;
+    gap: 50px;
+}
+
+.card{
+    background: rgb(240, 212, 212);
+    width: 300px;
+    height: 400px;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn{
+    border: 1px solid green;
+    padding: 10px 20px;
+}
+.new-book-btn{
+    font-size: 32px;
+    padding: 10px 15px;
+    color: red;
+    background: lightblue;
+}
+
+.hidden{
+    /* position: relative;
+    border: 10px solid yellow;
+    padding: 2px;
+    height: 100vh; */
+    display: none;
+}
+form{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 2px solid greenyellow;
+    background: rgb(211, 216, 224);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+form input{
+    font-size: 20px;
+    padding: 5px 5px;
+}
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#overlay.active{
+    pointer-events: all;
+}

@@ -1,5 +1,22 @@
 let myLibrary = [];
 
+const cards = document.querySelector(".cards");
+const newBookBtn = document.querySelector(".new-book-btn");
+const submitBtn = document.querySelector(".submit-btn");
+const info = document.querySelector(".info");
+const infoForm = document.querySelector(".info-form");
+const overlay = document.querySelector("#overlay");
+
+
+
+newBookBtn.addEventListener('click', showForm);
+submitBtn.addEventListener('click', submitForm);
+
+overlay.addEventListener('click', function(e) {
+        infoForm.reset()
+        hideForm()
+});
+
 function Book(name, author, pages, read){
     this.name = name;
     this.author = author;
@@ -11,15 +28,59 @@ function Book(name, author, pages, read){
     }
 }
 
-function addBookToLibrary(){
-    const name = prompt("Enter the book title: ");
-    const author = prompt("Enter the author name: ");
-    const pages = parseInt(prompt("Enter the total pages of book: "));
-    const read = prompt("What is read status of book true/false: ");
 
+function addBookToLibrary(name, author, pages, read){
     const book = new Book(name, author, pages, read)
     myLibrary.unshift(book);
+    displayBooks(book);
 }
 
-addBookToLibrary()
+
+
+function displayBooks(book){
+        const bookCard = createBookCard(book);
+        cards.prepend(bookCard);
+};
+
+function createBookCard(book){
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const name = document.createElement('p');
+    name.textContent = book.name;
+    const author = document.createElement('p');
+    author.textContent = book.author;
+    const pages = document.createElement('p');
+    pages.textContent = book.pages;
+    const read = document.createElement('p');
+    read.textContent= book.read;
+    card.appendChild(name);
+    card.appendChild(author);
+    card.appendChild(pages);
+    card.appendChild(read);
+    return card;
+};
+
+function showForm(){
+    info.classList.remove('hidden');
+    overlay.classList.add("active");
+}
+function hideForm(){
+    info.classList.add('hidden');
+    overlay.classList.remove("active");
+}
+
+function submitForm(event){
+    const name = document.querySelector("#name").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read").value;
+
+    addBookToLibrary(name, author, pages, read);
+
+    infoForm.reset();
+    hideForm();
+    event.preventDefault();
+}
+
+
 
