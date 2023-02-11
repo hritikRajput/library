@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Library</title>
-</head>
-<body>
-  <h1>Library</h1>
 
-  <div class="btn">
-    <button type="button" class="new-book-btn">New Book</button>
-  </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Library</title>
+</head>
+
+<body>
+  <header>
+    <h1>Library</h1>
+  </header>
 
   <main>
     <h2>My Collection</h2>
+    <div class="btn">
+      <button type="button" class="new-book-btn">New Book</button>
+    </div>
     <div class="cards">
     </div>
   </main>
 
   <div class="info hidden">
-  <form action="#" class="info-form">
-    <h2>Book</h2>
-    <input type="text" placeholder="Title" id="name" required>
-    <input type="text" placeholder="Author" id="author" required>
-    <input type="number" placeholder="Pages" id="pages" required>
-    <input type="text" placeholder="True/False" id="read" required>
-    <button type="submit" class="submit-btn">Submit</button>
-  </form>
-</div>
-<div id="overlay"></div>
+    <form action="#" class="info-form">
+      <h2>Book</h2>
+      <input type="text" placeholder="Title" id="name" required>
+      <input type="text" placeholder="Author" id="author" required>
+      <input type="number" placeholder="Pages" id="pages" required>
+      <input type="text" placeholder="True/False" id="read" required>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+  <div id="overlay"></div>
 
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
