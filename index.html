@@ -19,7 +19,7 @@
 
   <main>
     <h2>My Collection</h2>
-    <div class="btn">
+    <div class="btn-container">
       <button type="button" class="new-book-btn">New Book</button>
     </div>
     <div class="cards">
@@ -27,13 +27,13 @@
   </main>
 
   <div class="info hidden">
-    <form action="#" class="info-form">
+    <form action="#" class="info-form flex-col">
       <h2>Book</h2>
       <input type="text" placeholder="Title" id="name" required>
       <input type="text" placeholder="Author" id="author" required>
       <input type="number" placeholder="Pages" id="pages" required>
       <input type="text" placeholder="True/False" id="read" required>
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="btn submit-btn">Submit</button>
     </form>
   </div>
   <div id="overlay"></div>

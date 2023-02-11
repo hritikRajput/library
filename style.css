@@ -1,44 +1,44 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 16px;
 }
 
 
-body{
+body {
     font-family: Roboto, 'sans-serif';
     min-width: 450px;
     min-height: 100vh;
     background: #e1dcc5;
 }
 
-header{
+header {
     padding: 1.5em 10%;
     background: #ffd;
 }
 
-h1{
+h1 {
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
 }
 
-main{
-    padding: 3em 0;
-}
-h2{
-    font-size: 3rem;
-}
-main h2, main .btn{
-    /* text-align: center; */
-    padding: 1.5em 10%;
+main {
+    padding: 3em 10%;
 }
 
-main h2::after{
+h2 {
+    font-size: 3rem;
+}
+
+
+main h2::after {
     content: '';
     display: block;
     margin-top: 0.5em;
@@ -46,7 +46,11 @@ main h2::after{
     width: 33%;
 }
 
-.new-book-btn{
+.btn-container {
+    padding: 1.5em 0;
+}
+
+.new-book-btn {
     font-size: 2rem;
     padding: 0.25em;
     color: #fff;
@@ -56,48 +60,44 @@ main h2::after{
     cursor: pointer;
 }
 
-.cards{
-    width: max(80%, 400px);
-    margin: 0 auto;
-    /* background: #f3edd7; */
+.cards {
+    width: max(100%, 400px);
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
-    grid-template-rows: 400px;
-    grid-auto-rows: 400px;
-    align-items: center;
-    /* justify-content: center; */
+    grid-template-rows: 350px;
+    grid-auto-rows: 350px;
     gap: 50px;
 }
 
-.card{
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
     background: #ffd;
     color: #000033;
     width: 300px;
     height: 350px;
-    padding: 1.25em 0;
+    padding: 1.25em;
     border: 1px solid #ababab;
     border-radius: 5px;
     box-shadow: 1px 1px 3px 1px #ababab;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 }
 
-.card p{
+.card p {
     font-size: 1.25rem;
 }
 
-.hidden{
-    /* position: relative;
-    border: 10px solid yellow;
-    padding: 2px;
-    height: 100vh; */
+.hidden {
     display: none;
 }
-form{
+
+form {
     width: 300px;
     height: 400px;
     position: fixed;
@@ -107,18 +107,13 @@ form{
     top: 0;
     bottom: 0;
     margin: auto;
-   border-radius: 3px;
+    border-radius: 3px;
     background: #f1f1ff;
     outline: 2px solid #afafaf;
     padding: 1.25em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
 }
 
-form input{
+form input {
     font-size: 1.25rem;
     padding: 5px;
     width: 90%;
@@ -126,28 +121,53 @@ form input{
     border: none;
     border-radius: 3px;
 }
-form input:hover{
-    cursor: pointer;
-}
-form input:active{
-    outline: 1px solid #0000ff;
-}
-form input:focus{
-    outline: 1px solid #0000ff;
-}
-.submit-btn{
-    width: 60%;
-    font-size: 1.25rem;
-    padding: 0.25em 0.5em;
-    color: #000040;
-    background: lightblue;
-    border: none;
-    outline: 1px solid blue;
-    border-radius: 3px;
+
+form input:hover {
     cursor: pointer;
 }
 
-#overlay{
+form input:active {
+    outline: 1px solid #0000ff;
+}
+
+form input:focus {
+    outline: 1px solid #0000ff;
+}
+
+.btn {
+    border: 1px solid #afafaf;
+    border-radius: 3px;
+    width: 70%;
+    font-size: 1.25rem;
+    padding: 0.25em;
+    cursor: pointer;
+}
+
+.submit-btn {
+    color: #fff;
+    background: #00a2ff;
+    border: none;
+}
+.submit-btn:hover{
+    background: #0376b8;
+}
+
+.remove-book-btn {
+    color: white;
+    background: #ff3a3a;
+}
+
+.read-status-btn {
+    color: #000000;
+    background: #ffff50;
+}
+
+.read {
+    color: #000000;
+    background: #78ff78;
+}
+
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -156,35 +176,6 @@ form input:focus{
     pointer-events: none;
 }
 
-#overlay.active{
+#overlay.active {
     pointer-events: all;
-}
-
-.remove-book-btn{
-    border: 1px solid #afafaf;
-    border-radius: 3px;
-    width: 70%;
-    color: white;
-    font-size: 1.25rem;
-    padding: 0.25em;
-    background: #ff3a3a;
-    cursor: pointer;
-}
-
-.read-status-btn{
-    border: 1px solid #afafaf;
-    border-radius: 3px;
-    width: 70%;
-    color: #000000;
-    font-size: 1.25rem;
-    padding: 0.25em;
-    background: #ffff50;
-    cursor: pointer;
-}
-
-.read{
-    color: #000000;
-    font-size: 1.25rem;
-    padding: 0.25em;
-    background: #78ff78;
 }

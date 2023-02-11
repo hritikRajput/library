@@ -56,6 +56,7 @@ function displayBooks(book, currIndex){
 function createBookCard(book){
     const card = document.createElement('div');
     card.classList.add('card');
+    card.classList.add('flex-col')
     const name = document.createElement('p');
     name.textContent = book.name;
     const author = document.createElement('p');
@@ -66,6 +67,7 @@ function createBookCard(book){
     const read = document.createElement('button');
     read.type="button";
     read.classList.add("read-status-btn");
+    read.classList.add("btn")
     if(!(book.read==="true")){
         read.classList.add('read');
     }
@@ -73,6 +75,7 @@ function createBookCard(book){
 
     const remove = document.createElement('button');
     remove.type="button";
+    remove.classList.add("btn")
     remove.classList.add("remove-book-btn");
     remove.innerHTML="Remove"
 
@@ -95,16 +98,17 @@ function hideForm(){
     overlay.classList.remove("active");
 }
 
+
 function submitForm(event){
     const name = document.querySelector("#name").value;
     const author = document.querySelector("#author").value;
     const pages = document.querySelector("#pages").value;
     const read = document.querySelector("#read").value;
 
-    addBookToLibrary(name, author, pages, read);
-
-    infoForm.reset();
-    hideForm();
+    
+        addBookToLibrary(name, author, pages, read);
+        infoForm.reset();
+        hideForm();
     event.preventDefault();
 }
 
