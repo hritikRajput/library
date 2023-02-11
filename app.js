@@ -5,6 +5,7 @@ const newBookBtn = document.querySelector(".new-book-btn");
 const submitBtn = document.querySelector(".submit-btn");
 const info = document.querySelector(".info");
 const infoForm = document.querySelector(".info-form");
+const formHeading = document.querySelector(".form-heading");
 const overlay = document.querySelector("#overlay");
 
 
@@ -68,7 +69,7 @@ function createBookCard(book){
     read.type="button";
     read.classList.add("read-status-btn");
     read.classList.add("btn")
-    if(!(book.read==="true")){
+    if(!(book.read.toLowerCase()==="true")){
         read.classList.add('read');
     }
    
@@ -98,6 +99,15 @@ function hideForm(){
     overlay.classList.remove("active");
 }
 
+function showAlert(alertMessage, alert){
+    const div = document.createElement('div');
+    div.classList.add(alert);
+    div.appendChild(document.createTextNode(alertMessage));
+    infoForm.insertBefore(div, formHeading);
+    setTimeout(()=>{
+        infoForm.removeChild(div);
+    },2000)
+}
 
 function submitForm(event){
     const name = document.querySelector("#name").value;
@@ -105,10 +115,16 @@ function submitForm(event){
     const pages = document.querySelector("#pages").value;
     const read = document.querySelector("#read").value;
 
-    
+
+    if(name==='' || author==='' || pages==='' || read===''){
+        showAlert('* Please fill all the field!', 'error');
+    }
+    else{
         addBookToLibrary(name, author, pages, read);
         infoForm.reset();
+        showAlert('Book added successfully', 'success');
         hideForm();
+    }
     event.preventDefault();
 }
 
